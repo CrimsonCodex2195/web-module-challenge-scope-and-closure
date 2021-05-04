@@ -28,11 +28,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+    Counter1 calls on a function that always resets count to 0, and returning it with 1 added. However, counter2 always returns whatever value count is with 1 added.
   
   2. Which of the two uses a closure? How can you tell?
+    Counter1 is what uses a closure because it has a function nested with in. Consequently, there has to be a closure statement as it is using a value returned from a nested function.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     Counter1 would be reliable if you just want to reset the count value to 1. Counter2 would be preferable if you desire to return the count variable 1 value more than it was previously.`
 */
 
 // counter1 code
@@ -62,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 2)
 }
 
 

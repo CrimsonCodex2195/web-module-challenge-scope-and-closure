@@ -66,7 +66,7 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    return Math.floor(Math.random() * 2)
+    return Math.floor(Math.random() * 3)
 }
 
 
@@ -84,8 +84,18 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(innings){
+  let away = 0;
+  let home = 0;
+  for(let i = 0; i < innings; i++) {
+    home = home + inning();
+    away = away + inning();
+  }
+  let total = {
+    'Home': home,
+    'Away': away
+  }
+  return total;
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️

@@ -103,8 +103,9 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore() {
+  let total = finalScore();
+  return total;
 }
 
 
@@ -149,11 +150,25 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningTimes) {
+  function inning(){
+    return Math.floor(Math.random() * 3)
+  }
+  let away = 0;
+  let home = 0;
+  for(let i = 0; i < inningTimes; i++) {
+    away = away + inning();
+    home = home + inning();
+    total = {
+      'Away': away,
+      'Home': home
+    }
+    console.log(`Inning ${i}: Away ${total['Away']} - Home ${total['Home']}`);
+  }
+  if(total['Away'] === total['Home']) {
+    console.log(`This game will require extra innings: Away ${total['Away']} - Home ${total['Home']}`)
+  }
 }
-
-
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
